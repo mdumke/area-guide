@@ -1,5 +1,5 @@
 // bump the version cached *assets* change
-const STATIC_CACHE = 'static-v2'
+const STATIC_CACHE = 'static-v1'
 const DYNAMIC_CACHE = 'dynamic-v1'
 
 self.addEventListener('install', event => {
@@ -12,8 +12,8 @@ self.addEventListener('install', event => {
         '/manifest.json',
         '/src/assets/css/main.css',
         '/src/js/index.js',
-        '/src/pages/page1.html',
-        '/src/pages/page2.html'
+        '/pages/page1.html',
+        '/pages/page2.html'
       ])
     })
   )

@@ -1,3 +1,6 @@
+const videoPlayer = document.querySelector('#video-player')
+const qrCodeFallback = document.querySelector('#qr-code-fallback')
+
 if ('serviceWorker' in navigator) {
   navigator
     .serviceWorker
@@ -6,7 +9,6 @@ if ('serviceWorker' in navigator) {
       console.log('sw ready')
     })
 }
-
 
 let deferredPrompt
 
@@ -42,3 +44,24 @@ function getPWADisplayMode() {
   return 'browser';
 }
 
+const handleQRCode = decoded => {
+  window.location.href = `/pages/${decoded}.html`
+}
+
+Html5Qrcode
+  .getCameras()
+  .then(devices => {
+    if (devices && devices.length) {
+      const cameraId = devices[0].id
+      const html5Qrcode = new Html5Qrcode('reader')
+
+      html5Qrcode.start(
+        cameraId,
+        {
+          fps: 10
+        },
+        handleQRCode,
+        err => {}
+      )
+    }
+  })
