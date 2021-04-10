@@ -1,12 +1,15 @@
-# Guide App
+This is incomplete, potentially unusable *WORK IN PROGRESS*.
+
+
+# Todo
 
 [x] install to home screen
 [ ] multi-language support
 [ ] add minimal responsive design
 [x] content overview page
 [ ] navigate to content pages
-[ ] pre-load and cache resources
-[ ] use camera for QR codes
+[x] pre-load and cache resources
+[x] use camera for QR codes
 [ ] navigate through numbers/codes
 
 
