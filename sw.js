@@ -8,12 +8,12 @@ self.addEventListener('install', event => {
     caches.open(STATIC_CACHE).then(cache => {
       cache.addAll([
         '/',
-        '/index.html',
-        '/manifest.json',
-        '/src/assets/css/main.css',
-        '/src/js/index.js',
-        '/pages/page1.html',
-        '/pages/page2.html'
+        'index.html',
+        'manifest.json',
+        'src/assets/css/main.css',
+        'src/js/index.js',
+        'pages/page1.html',
+        'pages/page2.html'
       ])
     })
   )
