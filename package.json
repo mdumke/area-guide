@@ -2,14 +2,23 @@
   "name": "guide",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "start": "http-server -c-1"
+    "start": "http-server -c-1",
+    "build-dev": "webpack",
+    "build-pages": "webpack --config webpack.pages.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "http-server": "^0.12.3"
+    "css-loader": "^5.2.1",
+    "file-loader": "^6.2.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.1",
+    "http-server": "^0.12.3",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.31.2",
+    "webpack-cli": "^4.6.0"
   }
 }

@@ -9,11 +9,10 @@ self.addEventListener('install', event => {
       cache.addAll([
         '/',
         '/index.html',
+        '/main.bundle.js',
         '/manifest.json',
-        '/src/assets/css/main.css',
-        '/src/js/index.js',
-        '/pages/page1.html',
-        '/pages/page2.html'
+        '/page1.html',
+        '/page2.html',
       ])
     })
   )
