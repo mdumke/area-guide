@@ -44,24 +44,31 @@ function getPWADisplayMode() {
   return 'browser';
 }
 
+document.querySelector('#scan').addEventListener('click', e => {
+  e.preventDefault()
+  document.querySelector('#modal').style.display = 'flex'
+  startScan()
+})
+
+document.querySelector('#close-modal').addEventListener('click', e => {
+  e.preventDefault()
+  scanner.stop()
+  document.querySelector('#modal').style.display = 'none'
+})
+
+const scanner = new Html5Qrcode('reader')
+
 const handleQRCode = decoded => {
   window.location.href = `/pages/${decoded}.html`
 }
 
-Html5Qrcode
-  .getCameras()
-  .then(devices => {
-    if (devices && devices.length) {
-      const cameraId = devices[0].id
-      const html5Qrcode = new Html5Qrcode('reader')
+const handleQRErr = () => {}
 
-      html5Qrcode.start(
-        cameraId,
-        {
-          fps: 10
-        },
-        handleQRCode,
-        err => {}
-      )
-    }
-  })
+const startScan = () => {
+  scanner.start(
+    { facingMode: 'environment' },
+    { fps: 10 },
+    handleQRCode,
+    handleQRErr
+  )
+}

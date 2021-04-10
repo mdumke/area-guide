@@ -1,9 +1,9 @@
 # Guide App
 
-[ ] install to home screen
+[x] install to home screen
 [ ] multi-language support
 [ ] add minimal responsive design
-[ ] content overview page
+[x] content overview page
 [ ] navigate to content pages
 [ ] pre-load and cache resources
 [ ] use camera for QR codes
