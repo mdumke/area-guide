@@ -4,7 +4,7 @@ const qrCodeFallback = document.querySelector('#qr-code-fallback')
 if ('serviceWorker' in navigator) {
   navigator
     .serviceWorker
-    .register('/sw.js')
+    .register('sw.js')
     .then(() => {
       console.log('sw ready')
     })
