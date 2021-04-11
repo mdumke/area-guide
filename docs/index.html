@@ -1,1 +1,85 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>Guide</title><link rel="manifest" href="/area-guide/manifest.json"/><link rel="shortcut icon" href="/area-guide/favicon.ico"><meta name="mobile-web-app-capable" content="yes"><link rel="icon" sizes="192x192" href="/area-guide/app-icon-192x192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="apple-mobile-web-app-title" content="PWAGram"><link rel="apple-touch-icon" href="/area-guide/app-icon-48x48.png" sizes="48x48"><link rel="apple-touch-icon" href="/area-guide/app-icon-96x96.png" sizes="96x96"><link rel="apple-touch-icon" href="/area-guide/app-icon-192x192.png" sizes="192x192"><link rel="apple-touch-icon" href="/area-guide/app-icon-256x256.png" sizes="256x256"><link rel="apple-touch-icon" href="/area-guide/app-icon-512x512.png" sizes="512x512"><meta name="msapplication-TileImage" content="/area-guide/app-icon-256x256.png"><meta name="msapplication-TileColor" content="#000"><meta name="theme-color" content="#444"><link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-light_blue.min.css"><script defer="defer" src="https://code.getmdl.io/1.3.0/material.min.js"></script><script src="/area-guide/html5-qrcode.min.js"></script></head><body class="mdl-base"><div class="mdl-layout mdl-js-layout mdl-layout--fixed-header"><header class="mdl-layout__header"><div class="mdl-layout__header-row"><span class="mdl-layout-title">Gemüse Guide</span><div class="mdl-layout-spacer"></div><nav class="mdl-navigation"><a class="mdl-navigation__link" id="scan" href="#">Scannen</a></nav></div></header><div class="mdl-layout__drawer"><span class="mdl-layout-title">Stationen</span><nav class="mdl-navigation"><a class="mdl-navigation__link" href="/page1.html">Gurke</a> <a class="mdl-navigation__link" href="/page2.html">Tomate</a></nav></div><div class="modal" id="modal"><div id="reader" class="qr-scanner"></div><button id="close-modal" class="mdl-button mdl-js-button mdl-button--fab mdl-button--primary"><i class="material-icons">close</i></button></div><main class="mdl-layout__content"><div class="page-content"><p>Der Gemüse Guide hilft dir, den Unterschied zwischen einer Tomate und einer Gurke zu erkennen.</p><div><button id="button-install">App Installieren</button></div></div></main></div><script src="/area-guide/main.bundle.js"></script><script src="/area-guide/sw.bundle.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Guide</title>
+
+  <link rel="manifest" href="manifest.json" />
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="app-icon-192x192.png">
+
+  <!-- safari/IE support -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="PWAGram">
+  <link rel="apple-touch-icon" href="app-icon-48x48.png" sizes="48x48">
+  <link rel="apple-touch-icon" href="app-icon-96x96.png" sizes="96x96">
+  <link rel="apple-touch-icon" href="app-icon-192x192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="app-icon-256x256.png" sizes="256x256">
+  <link rel="apple-touch-icon" href="app-icon-512x512.png" sizes="512x512">
+  <meta name="msapplication-TileImage" content="app-icon-256x256.png">
+  <meta name="msapplication-TileColor" content="#000">
+  <meta name="theme-color" content="#444">
+
+  <!-- styles -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-light_blue.min.css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+  <script src="html5-qrcode.min.js"></script>
+<base href="/area-guide/"></head>
+<body class="mdl-base">
+
+  <!-- header -->
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">Gemüse Guide</span>
+
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+
+        <!-- Navigation -->
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" id="scan" href="#">Scannen</a>
+        </nav>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">Stationen</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="page1.html">Gurke</a>
+        <a class="mdl-navigation__link" href="page2.html">Tomate</a>
+      </nav>
+    </div>
+
+    <div class="modal" id="modal">
+      <div id="reader" class="qr-scanner"></div>
+
+      <button id="close-modal" class="mdl-button mdl-js-button mdl-button--fab mdl-button--primary">
+        <i class="material-icons">close</i>
+      </button>
+
+    </div>
+
+    <main class="mdl-layout__content">
+      <div class="page-content">
+        <p>Der Gemüse Guide hilft dir, den Unterschied zwischen einer Tomate und einer Gurke zu erkennen.
+
+        <div>
+          <button id="button-install">App Installieren</button>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+<script src="main.bundle.js"></script><script src="sw.bundle.js"></script></body>
+</html>

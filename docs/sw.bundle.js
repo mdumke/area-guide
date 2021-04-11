@@ -1,1 +1,32 @@
-(()=>{const e="static-v1",t="dynamic-v1";self.addEventListener("install",(t=>{t.waitUntil(caches.open(e).then((e=>{e.addAll(["/","/index.html","/main.bundle.js","/manifest.json","/page1.html","/page2.html"])})))})),self.addEventListener("activate",(n=>(n.waitUntil(caches.keys().then((n=>Promise.all(n.map((n=>{if(![e,t].includes(n))return caches.delete(n)})))))),self.clients.claim()))),self.addEventListener("fetch",(e=>{e.respondWith(caches.match(e.request).then((n=>null!=n?n:fetch(e.request).then((n=>caches.open(t).then((t=>(t.put(e.request.url,n.clone()),n))))))))}))})();
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./sw.js":
+/*!***************!*\
+  !*** ./sw.js ***!
+  \***************/
+/***/ (() => {
+
+eval("// bump the version cached *assets* change\nconst STATIC_CACHE = 'static-v1'\nconst DYNAMIC_CACHE = 'dynamic-v1'\n\nself.addEventListener('install', event => {\n  // cache selected requests\n  event.waitUntil(\n    caches.open(STATIC_CACHE).then(cache => {\n      cache.addAll([\n        '/',\n        '/index.html',\n        '/main.bundle.js',\n        '/manifest.json',\n        '/page1.html',\n        '/page2.html',\n      ])\n    })\n  )\n})\n\nself.addEventListener('activate', event => {\n  // clear unused caches\n  event.waitUntil(\n    caches.keys().then(keys => Promise.all(keys.map(key => {\n      if (![STATIC_CACHE, DYNAMIC_CACHE].includes(key)) {\n        return caches.delete(key)\n      }\n    })))\n  )\n\n  return self.clients.claim()\n})\n\nself.addEventListener('fetch', event => {\n  event.respondWith(\n    caches.match(event.request).then(response => {\n      // return cached response if possible\n      if (response != null) {\n        return response\n      }\n\n      // cache newly fetched response\n      return fetch(event.request).then(res =>\n          caches.open(DYNAMIC_CACHE).then(cache => {\n            cache.put(event.request.url, res.clone())\n            return res\n          })\n        )\n    })\n  )\n})\n\n\n//# sourceURL=webpack://guide/./sw.js?");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	var __webpack_exports__ = {};
+/******/ 	__webpack_modules__["./sw.js"]();
+/******/ 	
+/******/ })()
+;

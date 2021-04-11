@@ -2,7 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: {
     main: './src/index.js',
     sw: './sw.js'
@@ -13,18 +13,21 @@ module.exports = {
       filename: 'index.html',
       template: 'index.html',
       scriptLoading: 'blocking',
+      base: '/area-guide/',
       inject: 'body'
     }),
     new HtmlWebpackPlugin({
       filename: 'page1.html',
       template: 'pages/page1.html',
       scriptLoading: 'blocking',
+      base: '/area-guide/',
       inject: 'body'
     }),
     new HtmlWebpackPlugin({
       filename: 'page2.html',
       template: 'pages/page2.html',
       scriptLoading: 'blocking',
+      base: '/area-guide/',
       inject: 'body'
     })
   ],
@@ -32,7 +35,6 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'docs'),
-    publicPath: '/area-guide',
     assetModuleFilename: '[name][ext]',
     clean: true
   },
