@@ -32,7 +32,7 @@ module.exports = {
       inject: 'body'
     }),
     new webpack.DefinePlugin({
-      BASE: '/area-guide/'
+      BASE: "'/area-guide/'"
     })
   ],
 

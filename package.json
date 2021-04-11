@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "start": "http-server -c-1",
-    "build-dev": "webpack",
-    "build-pages": "webpack --config webpack.pages.js"
+    "build": "webpack --config webpack.pages.js",
+    "build-dev": "webpack"
   },
   "keywords": [],
   "author": "",

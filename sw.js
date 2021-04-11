@@ -7,12 +7,12 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(STATIC_CACHE).then(cache => {
       cache.addAll([
-        '/',
-        '/index.html',
-        '/main.bundle.js',
-        '/manifest.json',
-        '/page1.html',
-        '/page2.html',
+        BASE,
+        BASE + 'index.html',
+        BASE + 'main.bundle.js',
+        BASE + 'manifest.json',
+        BASE + 'page1.html',
+        BASE + 'page2.html',
       ])
     })
   )

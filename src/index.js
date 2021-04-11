@@ -6,7 +6,7 @@ const qrCodeFallback = document.querySelector('#qr-code-fallback')
 if ('serviceWorker' in navigator) {
   navigator
     .serviceWorker
-    .register(`${BASE}sw.bundle.js`)
+    .register(BASE  + 'sw.bundle.js')
     .then(() => {
       console.log('sw ready')
     })
@@ -20,18 +20,42 @@ window.addEventListener('beforeinstallprompt', e => {
   console.log(`'beforeinstallprompt' event was fired.`)
 })
 
-let buttonInstall = document.querySelector('#button-install')
+let scanner
 
-if (buttonInstall) {
-  buttonInstall.addEventListener('click', async () => {
-    console.log('prompting...')
-    deferredPrompt.prompt()
-    const { outcome } = await deferredPrompt.userChoice
-    console.log(`User response to the install prompt: ${outcome}`)
-    deferredPrompt = null
-    console.log(getPWADisplayMode())
+const registerEventListeners = () => {
+  // install application
+  let buttonInstall
+
+  if (buttonInstall) {
+    buttonInstall.addEventListener('click', async () => {
+      console.log('prompting...')
+      deferredPrompt.prompt()
+      const { outcome } = await deferredPrompt.userChoice
+      console.log(`User response to the install prompt: ${outcome}`)
+      deferredPrompt = null
+      console.log(getPWADisplayMode())
+    })
+  }
+
+  // activate scanner
+  document.querySelector('#scan').addEventListener('click', e => {
+    e.preventDefault()
+    document.querySelector('#modal').style.display = 'flex'
+    startScan()
+  })
+
+  // close scanner
+  document.querySelector('#close-modal').addEventListener('click', e => {
+    e.preventDefault()
+    scanner.stop()
+    document.querySelector('#modal').style.display = 'none'
   })
 }
+
+(() => {
+  scanner = new Html5Qrcode('reader')
+  registerEventListeners()
+})()
 
 window.addEventListener('appinstalled', () => {
   deferredPrompt = null
@@ -48,23 +72,6 @@ function getPWADisplayMode() {
   return 'browser';
 }
 
-document.querySelector('#scan').addEventListener('click', e => {
-  e.preventDefault()
-  document.querySelector('#modal').style.display = 'flex'
-  startScan()
-})
-
-document.querySelector('#close-modal').addEventListener('click', e => {
-  e.preventDefault()
-  scanner.stop()
-  document.querySelector('#modal').style.display = 'none'
-})
-
-let scanner
-
-(() => {
-  scanner = new Html5Qrcode('reader')
-})()
 
 const handleQRCode = decoded => {
   window.location.href = `/${decoded}.html`
