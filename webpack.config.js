@@ -31,6 +31,9 @@ module.exports = {
       template: 'pages/page2.html',
       scriptLoading: 'blocking',
       inject: 'body'
+    }),
+    new webpack.DefinePlugin({
+      BASE: '/'
     })
   ],
 

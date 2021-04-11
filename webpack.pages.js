@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
@@ -14,21 +15,24 @@ module.exports = {
       template: 'index.html',
       scriptLoading: 'blocking',
       base: '/area-guide/',
-      inject: 'head'
+      inject: 'body'
     }),
     new HtmlWebpackPlugin({
       filename: 'page1.html',
       template: 'pages/page1.html',
       scriptLoading: 'blocking',
       base: '/area-guide/',
-      inject: 'head'
+      inject: 'body'
     }),
     new HtmlWebpackPlugin({
       filename: 'page2.html',
       template: 'pages/page2.html',
       scriptLoading: 'blocking',
       base: '/area-guide/',
-      inject: 'head'
+      inject: 'body'
+    }),
+    new webpack.DefinePlugin({
+      BASE: '/area-guide/'
     })
   ],
 
