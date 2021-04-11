@@ -15,6 +15,11 @@ body {
   flex-direction: column;
 }
 
+.header-link {
+  text-decoration: none;
+  color: #fff;
+}
+
 .qr-scanner {
   margin: auto;
   width: calc(100vw - 40px);
