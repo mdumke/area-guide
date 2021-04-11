@@ -1,7 +1,7 @@
 {
   "name": "Your friendly area guide",
   "short_name": "Guide",
-  "start_url": "/index.html",
+  "start_url": "/area-guide/index.html",
   "scope": ".",
   "display": "standalone",
   "background_color": "#fff",
