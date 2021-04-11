@@ -24,3 +24,7 @@ body {
   margin: auto;
   width: calc(100vw - 40px);
 }
+
+.center {
+  margin: 0 auto;
+}

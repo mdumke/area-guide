@@ -48,7 +48,9 @@
 
         <!-- Navigation -->
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" id="scan" href="#">Scannen</a>
+          <a class="mdl-navigation__link" id="scan" href="#">
+            <i class="material-icons">qr_code_2</i>
+          </a>
         </nav>
       </div>
     </header>
@@ -71,10 +73,24 @@
 
     <main class="mdl-layout__content">
       <div class="page-content">
-        <p>Der Gemüse Guide hilft dir, den Unterschied zwischen einer Tomate und einer Gurke zu erkennen.
+        <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--4-col">
+            Der Gemüse Guide hilft dir, den Unterschied zwischen einer Tomate und einer Gurke zu verstehen.
+          </div>
 
-        <div>
-          <button id="button-install">App Installieren</button>
+          <div class="mdl-cell mdl-cell--4-col">
+            Die Navigation erfolgt über das Seitenmenü oder per QR Code. Den Scanner kannst du oben rechts aktivieren.
+          </div>
+
+          <div class="mdl-cell mdl-cell--4-col">
+            Um diese Seite als App zu verwenden, klick auf dieses Knöpfchen:
+          </div>
+
+          <div class="mdl-cell mdl-cell--4-col">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary" id="button-install">
+              App Installieren
+            </button>
+          </div>
         </div>
 
       </div>

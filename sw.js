@@ -13,6 +13,7 @@ self.addEventListener('install', event => {
         BASE + 'manifest.json',
         BASE + 'page1.html',
         BASE + 'page2.html',
+        BASE + 'tomate.jpeg',
       ])
     })
   )
