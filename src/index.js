@@ -74,7 +74,7 @@ function getPWADisplayMode() {
 
 
 const handleQRCode = decoded => {
-  window.location.href = `/${decoded}.html`
+  window.location.href = BASE + `${decoded}.html`
 }
 
 const handleQRErr = () => {}
