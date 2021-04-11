@@ -14,21 +14,21 @@ module.exports = {
       template: 'index.html',
       scriptLoading: 'blocking',
       base: '/area-guide/',
-      inject: 'body'
+      inject: 'head'
     }),
     new HtmlWebpackPlugin({
       filename: 'page1.html',
       template: 'pages/page1.html',
       scriptLoading: 'blocking',
       base: '/area-guide/',
-      inject: 'body'
+      inject: 'head'
     }),
     new HtmlWebpackPlugin({
       filename: 'page2.html',
       template: 'pages/page2.html',
       scriptLoading: 'blocking',
       base: '/area-guide/',
-      inject: 'body'
+      inject: 'head'
     })
   ],
 
